@@ -16,10 +16,12 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const auth = getAuth(app);
   const [user, setUser] = useState(null);
-  console.log(user);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
     return () => unsubscribe();
   }, []);
@@ -61,6 +63,7 @@ const AuthProvider = ({ children }) => {
     updateUserProfile,
     logoutUser,
     googleLoginHandler,
+    loading,
   };
   return (
     <>

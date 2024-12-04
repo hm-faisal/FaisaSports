@@ -71,9 +71,12 @@ const Header = () => {
           </div>
           <div className="navbar-end">
             {user ? (
-              <div className="flex justify-center items-center">
-                <img src={user.photoURL} alt="" />
-                <button className="btn btn-neutral" onClick={logoutUser}>
+              <div className="flex gap-4">
+                <button
+                  className="btn btn-neutral"
+                  onClick={logoutUser}
+                  title={`${user.photoURL} ${user.displayName}`}
+                >
                   logout
                 </button>
               </div>

@@ -1,10 +1,12 @@
 import { MdEmail } from "react-icons/md";
 import { IoKey } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider";
+import swal from "sweetalert";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const { emailPasswordLogin, setUser, googleLoginHandler } =
     useContext(AuthContext);
   const handleLogin = (e) => {
@@ -13,8 +15,14 @@ const LoginForm = () => {
     const email = form.get("email");
     const password = form.get("password");
     emailPasswordLogin(email, password)
-      .then((res) => setUser(res.user))
-      .catch((e) => console.log(e));
+      .then((res) => {
+        setUser(res.user);
+        swal("LogIn Successful", "You Successfully logged In", "success");
+        navigate("/");
+      })
+      .catch(() => {
+        swal("LogIn Failed", "Your Email or Password may wrong", "error");
+      });
   };
 
   const googleLogin = () => {

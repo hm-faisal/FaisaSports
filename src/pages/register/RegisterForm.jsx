@@ -2,11 +2,13 @@ import { FaUser } from "react-icons/fa";
 import { FaImagePortrait } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { IoKey } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider";
+import swal from "sweetalert";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const {
     emailPasswordNewUser,
     setUser,
@@ -25,8 +27,17 @@ const LoginForm = () => {
       .then((res) => {
         setUser(res.user);
         updateUserProfile(name, profile);
+        swal(
+          "Registration Successful",
+          "You Successfully Registered",
+          "success"
+        );
+        navigate("/");
       })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        console.log(e);
+        swal("Registration Failed", `${e}`, "error");
+      });
   };
 
   const googleLogin = () => googleLoginHandler();
