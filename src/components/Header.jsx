@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../context/AuthProvider";
 
 const Header = () => {
+  const { user, logoutUser } = useContext(AuthContext);
   return (
     <>
       <div>
@@ -45,7 +48,7 @@ const Header = () => {
                 </NavLink>
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl">daisyUI</a>
+            <a className="btn btn-ghost text-xl">FAISASPORTS</a>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
@@ -67,13 +70,24 @@ const Header = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            <Link className="btn btn-neutral" to={"/login"}>
-              Login
-            </Link>
-            <span className="px-2">or</span>
-            <Link className="btn btn-neutral" to={"/register"}>
-              Register
-            </Link>
+            {user ? (
+              <div className="flex justify-center items-center">
+                <img src={user.photoURL} alt="" />
+                <button className="btn btn-neutral" onClick={logoutUser}>
+                  logout
+                </button>
+              </div>
+            ) : (
+              <>
+                <Link className="btn btn-neutral" to={"/login"}>
+                  Login
+                </Link>
+                <span className="px-2">or</span>
+                <Link className="btn btn-neutral" to={"/register"}>
+                  Register
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>
