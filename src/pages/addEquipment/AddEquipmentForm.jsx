@@ -89,7 +89,7 @@ const AddEquipmentForm = () => {
             <input
               type="text"
               className="grow"
-              value={user.displayName}
+              value={user.displayName || ""}
               name="name"
               readOnly
             />

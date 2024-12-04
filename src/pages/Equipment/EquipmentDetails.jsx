@@ -2,7 +2,6 @@ import { useLoaderData } from "react-router-dom";
 
 const EquipmentDetails = () => {
   const item = useLoaderData();
-  console.log(item);
   return (
     <>
       <div className="flex justify-center items-center min-h-screen flex-col">
