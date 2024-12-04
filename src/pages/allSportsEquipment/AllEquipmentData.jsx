@@ -26,7 +26,7 @@ const AllEquipmentData = ({ allEquipment }) => {
                   <td>{equipment.eqPrice}</td>
                   <td>
                     <Link
-                      to={`equipment/${equipment._id}`}
+                      to={`/equipment/${equipment._id}`}
                       className="btn btn-neutral"
                     >
                       view details
