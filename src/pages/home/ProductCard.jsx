@@ -11,13 +11,13 @@ const ProductCard = ({ product }) => {
         />
 
         <div className="p-4">
-          <h2 className="text-lg font-semibold text-gray-800">
+          <h2 className="text-lg font-semibold text-gray-500 ">
             {product.eqName}
           </h2>
 
           <p className="text-sm text-gray-500 mt-1">{product.eqCategory}</p>
 
-          <p className="text-xl font-bold text-gray-900 mt-2">
+          <p className="text-xl font-bold text-gray-500 mt-2">
             ${product.eqPrice}
           </p>
 

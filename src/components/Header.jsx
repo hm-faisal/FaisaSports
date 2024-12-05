@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
+import { Tooltip } from "react-tooltip";
 
 const Header = ({ setLightTheme, lightTheme }) => {
   const { user, logoutUser } = useContext(AuthContext);
@@ -77,18 +78,27 @@ const Header = ({ setLightTheme, lightTheme }) => {
             </ul>
           </div>
           <div className="navbar-end">
-            <button onClick={() => setLightTheme(!lightTheme)}>
+            <button
+              onClick={() => setLightTheme(!lightTheme)}
+              className="btn mr-2"
+            >
               switch theme
             </button>
             {user ? (
               <div className="flex gap-4">
-                <button
-                  className="btn btn-neutral"
-                  onClick={logoutUser}
-                  title={`${user.photoURL} ${user.displayName}`}
+                <a
+                  data-tooltip-id="my-tooltip"
+                  data-tooltip-content={`profile Image = ${user.photoURL}, Name = ${user.displayName}`}
                 >
-                  logout
-                </button>
+                  <button
+                    className="btn btn-neutral"
+                    onClick={logoutUser}
+                    title={`${user.photoURL} ${user.displayName}`}
+                  >
+                    logout
+                  </button>
+                </a>
+                <Tooltip id="my-tooltip" />
               </div>
             ) : (
               <>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import { Fade } from "react-awesome-reveal";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -29,11 +30,15 @@ const Product = () => {
           {products.length > 0 ? (
             sortProducts ? (
               products.map((product, i) => (
-                <ProductCard product={product} key={i} />
+                <Fade key={i}>
+                  <ProductCard product={product} />
+                </Fade>
               ))
             ) : (
               products.map((product, i) => (
-                <ProductCard product={product} key={i} />
+                <Fade key={i}>
+                  <ProductCard product={product} />
+                </Fade>
               ))
             )
           ) : (
