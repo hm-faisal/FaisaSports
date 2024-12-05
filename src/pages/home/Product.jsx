@@ -26,7 +26,7 @@ const Product = () => {
           </button>
         </div>
 
-        <div className="Products grid grid-cols-3 gap-4">
+        <div className="Products grid grid-cols-1 md:grid-cols-3 gap-4 ">
           {products.length > 0 ? (
             sortProducts ? (
               products.map((product, i) => (

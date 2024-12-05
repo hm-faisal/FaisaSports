@@ -14,7 +14,9 @@ const Category = () => {
   return (
     <>
       <div className="flex justify-center items-center flex-col my-8">
-        <h2 className="text-4xl font-bold">See Our Product Categories</h2>
+        <h2 className="text-4xl font-bold text-center">
+          See Our Product Categories
+        </h2>
         <div className="category my-4 flex flex-wrap gap-4">
           {category.map((item, i) => (
             <span key={i} className="btn text-lg font-bold">

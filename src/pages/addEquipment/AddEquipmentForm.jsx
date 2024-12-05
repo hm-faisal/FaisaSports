@@ -68,7 +68,7 @@ const AddEquipmentForm = () => {
           Add Your Equipment
         </h2>
         <form
-          className="grid grid-cols-2 gap-4 max-w-screen-md mx-auto mb-12"
+          className="flex flex-col md:grid md:grid-cols-2 gap-4 max-w-screen-md mx-auto mb-12"
           onSubmit={addEquipmentHandler}
         >
           <label className="input input-bordered flex items-center gap-2">

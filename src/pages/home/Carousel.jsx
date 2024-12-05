@@ -10,7 +10,7 @@ const Carousel = () => {
             />
             <div className="absolute w-full h-full flex justify-center items-center flex-col">
               <h2 className="text-4xl font-bold text-black">Basketball</h2>
-              <p className="text-lg text-black">
+              <p className="text-lg text-black text-center">
                 Improves cardiovascular health, coordination, and teamwork.
               </p>
             </div>
@@ -30,7 +30,7 @@ const Carousel = () => {
             />
             <div className="absolute w-full h-full flex justify-center items-center flex-col">
               <h2 className="text-4xl font-bold text-black">Soccer</h2>
-              <p className="text-lg text-black">
+              <p className="text-lg text-black text-center">
                 Enhances endurance, flexibility, and teamwork.
               </p>
             </div>
@@ -50,7 +50,7 @@ const Carousel = () => {
             />
             <div className="absolute w-full h-full flex justify-center items-center flex-col">
               <h2 className="text-4xl font-bold text-black">Tennis</h2>
-              <p className="text-lg text-black">
+              <p className="text-lg text-black text-center">
                 Boosts mental focus, agility, and coordination.
               </p>
             </div>
@@ -70,7 +70,7 @@ const Carousel = () => {
             />
             <div className="absolute w-full h-full flex justify-center items-center flex-col">
               <h2 className="text-4xl font-bold text-black">Swimming</h2>
-              <p className="text-lg text-black">
+              <p className="text-lg text-black text-center">
                 Improves flexibility, endurance, and overall body strength.
               </p>
             </div>

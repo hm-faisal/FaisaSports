@@ -2,7 +2,7 @@ const UserHelpDesk = () => {
   return (
     <>
       <h2 className="text-4xl font-bold my-6 text-center">User Help Desk</h2>
-      <div className="flex justify-center items-center my-8 gap-8">
+      <div className="flex justify-center items-center my-8 gap-8 mx-4 flex-col md:flex-row">
         <div className="help-Text">
           <h2 className="text-2xl font-bold my-6 ">Submit Your Issue</h2>
           <p className="">Here you can submit an issue if you want.</p>

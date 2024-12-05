@@ -36,16 +36,25 @@ const Header = ({ setLightTheme, lightTheme }) => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
               >
-                <NavLink className={"text-md px-4 py-2 font-semibold"}>
+                <NavLink className={"text-md px-4 py-2 font-semibold"} to={"/"}>
                   Home
                 </NavLink>
-                <NavLink className={"text-md px-4 py-2 font-semibold"}>
+                <NavLink
+                  className={"text-md px-4 py-2 font-semibold"}
+                  to={"/allEquipment"}
+                >
                   All Sports Equipment
                 </NavLink>
-                <NavLink className={"text-md px-4 py-2 font-semibold"}>
+                <NavLink
+                  className={"text-md px-4 py-2 font-semibold"}
+                  to={"/addEquipment"}
+                >
                   Add Equipment
                 </NavLink>
-                <NavLink className={"text-md px-4 py-2 font-semibold"}>
+                <NavLink
+                  className={"text-md px-4 py-2 font-semibold"}
+                  to={`/myEquipment`}
+                >
                   My Equipment List
                 </NavLink>
               </ul>
