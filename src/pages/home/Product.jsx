@@ -7,7 +7,7 @@ const Product = () => {
     fetch("http://localhost:5000/all_equipment")
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  });
+  }, []);
   return (
     <>
       <div className="flex justify-center items-center flex-col my-16">
