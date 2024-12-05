@@ -2,6 +2,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Carousel from "./Carousel";
 import Category from "./Category";
+import Partner from "./Partner";
 import Product from "./Product";
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
         <Carousel />
         <Category />
         <Product />
+        <Partner />
       </div>
       <Footer />
     </>

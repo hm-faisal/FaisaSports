@@ -25,9 +25,7 @@ const ProductCard = ({ product }) => {
             <span className="text-yellow-500">{product.eqRating} ⭐</span>
           </div>
 
-          <p className="text-sm text-gray-600 mt-2">
-            Available colors: {product.eqCustom}
-          </p>
+          <p className="text-sm text-gray-600 mt-2">{product.eqCustom}</p>
 
           <div className="flex justify-between items-center mt-4">
             <span className="text-sm text-gray-600">

@@ -10,7 +10,6 @@ const Category = () => {
   }, []);
 
   products.map((item) => category.push(item.eqCategory));
-  console.log(category);
 
   return (
     <>
