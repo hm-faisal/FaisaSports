@@ -9,6 +9,7 @@ import MyEquipmentList from "../pages/myEquipmentList/MyEquipmentList";
 import PrivateRoute from "./PrivateRoute";
 import MyEquipmentComponent from "../pages/myEquipmentList/MyEquipmentComponent";
 import UpdateEquipment from "../pages/updateEquipment/UpdateEquipment";
+import NotFound from "../pages/404/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
     ),
     loader: ({ params }) =>
       fetch(`http://localhost:5000/equipment/${params.id}`),
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
