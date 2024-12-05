@@ -9,11 +9,10 @@ import { GrStorage } from "react-icons/gr";
 import { BiSolidCustomize } from "react-icons/bi";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider";
-import Loading from "../../components/Loading";
 import swal from "sweetalert";
 
 const UpdateEquipmentForm = ({ product }) => {
-  const { user, loading } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const UpdateEquipmentHandler = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -64,9 +63,7 @@ const UpdateEquipmentForm = ({ product }) => {
       })
       .catch((e) => console.log(e));
   };
-  return loading ? (
-    <Loading />
-  ) : (
+  return (
     <>
       <div className="flex justify-center item-center min-h-screen flex-col ">
         <h2 className="text-3xl font-bold mb-8 text-center  my-4">

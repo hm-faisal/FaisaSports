@@ -9,7 +9,7 @@ const MyEquipment = ({ product }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        navigate("/allEquipment");
+        navigate("/");
       });
   };
 
@@ -64,7 +64,7 @@ const MyEquipment = ({ product }) => {
               className="btn btn-warning"
               onClick={() => document.getElementById("my_modal_5").showModal()}
             >
-              open modal
+              Delete
             </button>
             <dialog
               id="my_modal_5"
