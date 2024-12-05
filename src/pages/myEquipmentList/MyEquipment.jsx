@@ -1,6 +1,18 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const MyEquipment = ({ product }) => {
+  const navigate = useNavigate();
+  const equipmentDeleteHandler = () => {
+    fetch(`http://localhost:5000/equipment/delete/${product._id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        navigate("/");
+      });
+  };
+
   return (
     <>
       <div className="max-w-xs rounded-lg border border-gray-200 shadow-lg overflow-hidden">
@@ -47,7 +59,33 @@ const MyEquipment = ({ product }) => {
             >
               Update
             </Link>
-            <Link className="btn btn-warning">Delete</Link>
+
+            <button
+              className="btn btn-warning"
+              onClick={() => document.getElementById("my_modal_5").showModal()}
+            >
+              open modal
+            </button>
+            <dialog
+              id="my_modal_5"
+              className="modal modal-bottom sm:modal-middle"
+            >
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">Delete Confirm ...</h3>
+                <p className="py-4">This Operation cannot be undo</p>
+                <div className="modal-action">
+                  <form method="dialog" className="space-x-4">
+                    <button className="btn ">Close</button>
+                    <button
+                      className="btn btn-warning"
+                      onClick={equipmentDeleteHandler}
+                    >
+                      confirm
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
           </div>
         </div>
       </div>

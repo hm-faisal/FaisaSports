@@ -15,12 +15,14 @@ const MyEquipmentComponent = () => {
   return (
     <>
       <div className="flex flex-wrap justify-center items-center min-h-screen gap-4 my-8">
-        {products ? (
+        {products.length > 0 ? (
           products.map((product, i) => (
             <MyEquipment product={product} key={i} />
           ))
         ) : (
-          <div>No Item Found</div>
+          <div className="flex flex-wrap justify-center items-center min-h-screen">
+            No Item Found
+          </div>
         )}
       </div>
     </>
