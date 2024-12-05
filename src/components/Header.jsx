@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
 
-const Header = () => {
+const Header = ({ setLightTheme, lightTheme }) => {
   const { user, logoutUser } = useContext(AuthContext);
 
   return (
@@ -77,6 +77,9 @@ const Header = () => {
             </ul>
           </div>
           <div className="navbar-end">
+            <button onClick={() => setLightTheme(!lightTheme)}>
+              switch theme
+            </button>
             {user ? (
               <div className="flex gap-4">
                 <button
