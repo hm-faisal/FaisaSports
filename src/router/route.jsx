@@ -6,6 +6,9 @@ import AddEquipment from "../pages/addEquipment/AddEquipment";
 import AllEquipment from "../pages/allSportsEquipment/AllEquipment";
 import Equipment from "../pages/Equipment/Equipment";
 import MyEquipmentList from "../pages/myEquipmentList/MyEquipmentList";
+import PrivateRoute from "./PrivateRoute";
+import MyEquipmentComponent from "../pages/myEquipmentList/MyEquipmentComponent";
+import MyEquipment from "../pages/myEquipmentList/MyEquipment";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +22,11 @@ const router = createBrowserRouter([
   { path: "/register", element: <Register /> },
   {
     path: "/addEquipment",
-    element: <AddEquipment />,
+    element: (
+      <PrivateRoute>
+        <AddEquipment />
+      </PrivateRoute>
+    ),
   },
   {
     path: "/allEquipment",
@@ -28,15 +35,27 @@ const router = createBrowserRouter([
   },
   {
     path: "/equipment/:id",
-    element: <Equipment />,
+    element: (
+      <PrivateRoute>
+        <Equipment />
+      </PrivateRoute>
+    ),
     loader: ({ params }) =>
       fetch(`http://localhost:5000/equipment/${params.id}`),
   },
   {
-    path: "/myEquipment/:email",
-    element: <MyEquipmentList />,
-    loader: ({ params }) =>
-      fetch(`http://localhost:5000/equipments/${params.email}`),
+    path: "/myEquipment/",
+    element: (
+      <PrivateRoute>
+        <MyEquipmentList />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "",
+        element: <MyEquipmentComponent />,
+      },
+    ],
   },
 ]);
 

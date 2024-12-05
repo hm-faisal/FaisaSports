@@ -1,14 +1,11 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
-import Loading from "./Loading";
 
 const Header = () => {
-  const { user, logoutUser, loading } = useContext(AuthContext);
+  const { user, logoutUser } = useContext(AuthContext);
 
-  return loading ? (
-    <Loading />
-  ) : (
+  return (
     <>
       <div>
         <div className="navbar bg-base-100 flex-col md:flex-row">
@@ -73,7 +70,7 @@ const Header = () => {
               </NavLink>
               <NavLink
                 className={"text-md px-4 py-2 font-semibold"}
-                to={`/myEquipment/${user.email}`}
+                to={`/myEquipment`}
               >
                 My Equipment List
               </NavLink>
