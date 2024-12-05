@@ -41,7 +41,12 @@ const MyEquipment = ({ product }) => {
           </div>
 
           <div className="flex justify-between items-center my-6">
-            <Link className="btn btn-success">Update</Link>
+            <Link
+              className="btn btn-success"
+              to={`/equipment/update_info/${product._id}`}
+            >
+              Update
+            </Link>
             <Link className="btn btn-warning">Delete</Link>
           </div>
         </div>
