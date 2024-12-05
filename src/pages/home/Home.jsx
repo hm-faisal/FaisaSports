@@ -4,6 +4,7 @@ import Carousel from "./Carousel";
 import Category from "./Category";
 import Partner from "./Partner";
 import Product from "./Product";
+import UserHelpDesk from "./UserHelpDesk";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         <Category />
         <Product />
         <Partner />
+        <UserHelpDesk />
       </div>
       <Footer />
     </>
