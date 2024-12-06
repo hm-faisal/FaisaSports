@@ -8,7 +8,13 @@ const AllEquipment = () => {
   return (
     <>
       <Header />
-      <AllEquipmentData allEquipment={allEquipment} />
+      <h2 className="text-4xl font-bold my-8 text-center">
+        All Equipment List
+      </h2>
+      <div className="overflow-x-auto">
+        <AllEquipmentData allEquipment={allEquipment} />
+      </div>
+
       <Footer />
     </>
   );
