@@ -32,7 +32,7 @@ const router = createBrowserRouter([
   {
     path: "/allEquipment",
     element: <AllEquipment />,
-    loader: () => fetch("http://localhost:5000/all_equipment"),
+    loader: () => fetch("https://faisasportsserver.vercel.app/all_equipment"),
   },
   {
     path: "/equipment/:id",
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     loader: ({ params }) =>
-      fetch(`http://localhost:5000/equipment/${params.id}`),
+      fetch(`https://faisasportsserver.vercel.app/equipment/${params.id}`),
   },
   {
     path: "/myEquipment/",
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     loader: ({ params }) =>
-      fetch(`http://localhost:5000/equipment/${params.id}`),
+      fetch(`https://faisasportsserver.vercel.app/equipment/${params.id}`),
   },
   {
     path: "*",

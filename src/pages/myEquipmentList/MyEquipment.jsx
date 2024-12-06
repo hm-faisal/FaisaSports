@@ -3,9 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 const MyEquipment = ({ product }) => {
   const navigate = useNavigate();
   const equipmentDeleteHandler = () => {
-    fetch(`http://localhost:5000/equipment/delete/${product._id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://faisasportsserver.vercel.app/equipment/delete/${product._id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

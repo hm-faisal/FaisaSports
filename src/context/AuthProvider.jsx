@@ -46,7 +46,7 @@ const AuthProvider = ({ children }) => {
   // Logout User
 
   const logoutUser = () => {
-    return signOut(auth).then(() => alert("Logout Successful"));
+    return signOut(auth);
   };
 
   // Google Login

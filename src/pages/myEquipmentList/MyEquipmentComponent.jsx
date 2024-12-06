@@ -7,7 +7,7 @@ const MyEquipmentComponent = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/equipments/${user.email}`)
+    fetch(`https://faisasportsserver.vercel.app/equipments/${user.email}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

@@ -44,13 +44,16 @@ const UpdateEquipmentForm = ({ product }) => {
     // console.log(equipment);
 
     // Send Data to Backend
-    fetch(`http://localhost:5000/equipment/update_info/${product._id}`, {
-      method: "PUT",
-      body: JSON.stringify(equipment),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    fetch(
+      `https://faisasportsserver.vercel.app/equipment/update_info/${product._id}`,
+      {
+        method: "PUT",
+        body: JSON.stringify(equipment),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

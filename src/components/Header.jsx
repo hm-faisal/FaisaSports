@@ -2,9 +2,16 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
 import { Tooltip } from "react-tooltip";
+import swal from "sweetalert";
 
 const Header = ({ setLightTheme, lightTheme }) => {
   const { user, logoutUser } = useContext(AuthContext);
+
+  const logOutHandler = () => {
+    logoutUser().then(() => {
+      swal("Logout Successful", "You Successfully logged out", "success");
+    });
+  };
 
   return (
     <>
@@ -101,7 +108,7 @@ const Header = ({ setLightTheme, lightTheme }) => {
                 >
                   <button
                     className="btn btn-neutral"
-                    onClick={logoutUser}
+                    onClick={logOutHandler}
                     title={`${user.photoURL} ${user.displayName}`}
                   >
                     logout

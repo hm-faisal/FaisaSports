@@ -43,7 +43,7 @@ const AddEquipmentForm = () => {
     // console.log(equipment);
 
     // Send Data to Backend
-    fetch("http://localhost:5000/add_equipment", {
+    fetch("https://faisasportsserver.vercel.app/add_equipment", {
       method: "POST",
       body: JSON.stringify(equipment),
       headers: {

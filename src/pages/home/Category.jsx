@@ -4,7 +4,7 @@ const Category = () => {
   const [products, setProducts] = useState([]);
   const category = [];
   useEffect(() => {
-    fetch("http://localhost:5000/all_equipment")
+    fetch("https://faisasportsserver.vercel.app/all_equipment")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

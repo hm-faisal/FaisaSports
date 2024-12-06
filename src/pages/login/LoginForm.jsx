@@ -27,7 +27,10 @@ const LoginForm = () => {
   };
 
   const googleLogin = () => {
-    googleLoginHandler();
+    googleLoginHandler().then(() => {
+      navigate(location.state ? location.state : "/");
+      swal("LogIn Successful", "You Successfully logged In", "success");
+    });
   };
 
   return (
@@ -68,7 +71,18 @@ const LoginForm = () => {
         </div>
         <div className="info mt-8 ">
           <p>
-            <Link className="text-sky-900">Forget Password ?</Link>
+            <button
+              onClick={() => {
+                swal(
+                  "Forgot Your Password",
+                  "Your Request is being processing",
+                  "warning"
+                );
+              }}
+              className="text-sky-900"
+            >
+              Forget Password ?
+            </button>
           </p>
           <span>or</span>
           <p>
