@@ -7,7 +7,7 @@ const AllEquipmentData = ({ allEquipment }) => {
       <div className="flex justify-center items-center min-h-screen max-w-screen-lg mx-auto flex-col ">
         <h2 className="text-4xl font-bold my-8">All Equipment List</h2>
         <div className=" overflow-x-scroll ">
-          <table className="table table-zebra">
+          <table className="table table-zebra table-auto">
             {/* head */}
             <thead>
               <tr className="*:text-base">

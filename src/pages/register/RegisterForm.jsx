@@ -3,18 +3,20 @@ import { FaImagePortrait } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { IoKey } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider";
 import swal from "sweetalert";
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  const [error, setError] = useState("");
   const {
     emailPasswordNewUser,
     setUser,
     updateUserProfile,
     googleLoginHandler,
   } = useContext(AuthContext);
+  const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -22,7 +24,13 @@ const LoginForm = () => {
     const name = form.get("name");
     const profile = form.get("profile");
     const email = form.get("email");
-    const password = form.get("password");
+    // const password = form.get("password");
+    const password = regex.test(form.get("password"))
+      ? form.get("password")
+      : setError(
+          "Password Must contain at least 1 uppercase,lowercase letters, and 6 characters long."
+        );
+
     emailPasswordNewUser(email, password)
       .then((res) => {
         setUser(res.user);
@@ -76,6 +84,7 @@ const LoginForm = () => {
               name="email"
             />
           </label>
+
           <label className="input input-bordered flex items-center gap-2">
             <IoKey />
             <input
@@ -85,6 +94,7 @@ const LoginForm = () => {
               name="password"
             />
           </label>
+          <label className="text-red-700 max-w-64">{error ?? error}</label>
           <button type="submit" className="btn btn-primary w-full">
             Register
           </button>

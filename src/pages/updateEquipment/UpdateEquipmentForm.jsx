@@ -70,7 +70,7 @@ const UpdateEquipmentForm = ({ product }) => {
     <>
       <div className="flex justify-center item-center min-h-screen flex-col ">
         <h2 className="text-3xl font-bold mb-8 text-center  my-4">
-          Add Your Equipment
+          Updata Your Equipment Information
         </h2>
         <form
           className="grid grid-cols-2 gap-4 max-w-screen-md mx-auto mb-12"
