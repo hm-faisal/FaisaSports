@@ -6,7 +6,7 @@ const Product = () => {
   const [products, setProducts] = useState([]);
   const [sortProducts, setSortProducts] = useState(false);
   useEffect(() => {
-    fetch("https://faisasportsserver.vercel.app/all_equipment")
+    fetch("https://faisasportsserver.vercel.app/all_equipment_home")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
